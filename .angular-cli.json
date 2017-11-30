@@ -19,7 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "usr",
       "styles": [
-        "styles.styl"
+        "styles.styl",
+        "./assets/vendor.css",
+        "./assets/theme.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -55,6 +57,8 @@
   },
   "defaults": {
     "styleExt": "styl",
-    "component": {}
+    "spec": {
+      "component": false
+    }
   }
 }

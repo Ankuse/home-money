@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+import {AuthModule} from './auth/auth.module';
+import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing.module';
+import {AuthRoutingModule} from './auth/auth-routing.module';
 
 
 @NgModule({
@@ -10,7 +15,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+    AuthModule,
+    AuthRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
