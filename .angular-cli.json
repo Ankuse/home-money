@@ -58,7 +58,8 @@
   "defaults": {
     "styleExt": "styl",
     "spec": {
-      "component": false
+      "component": false,
+      "service": false
     }
   }
 }
