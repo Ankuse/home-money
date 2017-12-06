@@ -59,7 +59,8 @@
     "styleExt": "styl",
     "spec": {
       "component": false,
-      "service": false
+      "service": false,
+      "directives": false
     }
   }
 }

@@ -38,16 +38,11 @@ export class RegistrationComponent implements OnInit {
               nowCanLogin: true,
             }
           });
-          console.log(user);
 
           window.setTimeout( () => {
-            this.usersService.createNewUser( user )
-                .subscribe( () => {
-                  this.router.navigate(['/login'] );
-                });
+            this.router.navigate(['/login'] );
           }, 2000);
-
-        } );
+    });
   }
 
   forbiddenEmails (control: FormControl): Promise<any> {
