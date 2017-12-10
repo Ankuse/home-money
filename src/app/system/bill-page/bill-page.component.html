@@ -10,10 +10,12 @@
     </div>
 </div>
 <section class="section">
-    <div class="row text-center" *ngIf="!isLoaded">Loading...</div>
-    <div class="row" *ngIf="isLoaded">
-        <usr-bill-card [bill]="bill" [currency]="currency"></usr-bill-card>
-        <usr-currency-card [currency]="currency"></usr-currency-card>
+    <div class="container">
+        <div class="row text-center" *ngIf="!isLoaded">Loading...</div>
+        <div class="row" *ngIf="isLoaded">
+            <usr-bill-card [bill]="bill" [currency]="currency"></usr-bill-card>
+            <usr-currency-card [currency]="currency"></usr-currency-card>
+        </div>
     </div>
 </section>
             

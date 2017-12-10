@@ -22,7 +22,7 @@ import {SystemModule} from './system/system.module';
     AppRoutingModule,
     AuthModule,
     AuthRoutingModule,
-    SystemModule
+    SystemModule,
   ],
   providers: [UsersService, AuthService],
   bootstrap: [AppComponent]

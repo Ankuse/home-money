@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header bordered">
+        <div class="header-block">
+            <h3 class="title">Удалить категорию</h3>
+        </div>
+    </div>
+    <div class="card-block">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+                <label class="control-label" for="e-select-delete">Удалить категорию</label>
+                <select id="e-select-delete"
+                        class="form-control"
+                        [(ngModel)]="currentCategoryId"
+                        [ngModelOptions]="{standalone: true}"
+                        name="delete"
+                        #delete="ngModel"
+                        (change)="onCategoryChange()"
+                >
+                    <option *ngFor="let c of categories" [value]="c.id">{{c.name}}</option>
+                </select>
+                <br>
+                <div class="form-group">
+                    <label class="control-label">Подтвердите ваше решение</label>
+                    <div *ngFor="let t of types" >
+                        <label>
+                            <input class="radio"
+                                   name="type"
+                                   type="radio"
+                                   [value]="t.type"
+                                   required
+                                   [ngModel]="'no'"
+                                   #truelabel="ngModel"
+                            >
+                            <span>
+                                {{t.label}}
+                            </span>
+                        </label>
+                        <!--TODO Сделать по клику на type->no кнопку disabled и при yes disabled убрать -->
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]>Удалить</button>
+            </div>
+        </form>
+    </div>
+</div>

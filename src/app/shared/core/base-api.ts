@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class BaseApi {
+
   private baseUrl = 'http://localhost:3000/';
 
   constructor(
@@ -15,9 +16,13 @@ export class BaseApi {
   }
 
   public get(url: string = ''): Observable<any> {
-    return this.http.get(this.getUrl(url))
-      .map( ( response: Response) => response.json() );
+    return this.http.get(this.getUrl(url)) // возвращаем конкатинированый baseUrl + url приходящий в функцию, и делаем get этого url-a
+      .map( ( response: Response) => response.json() );  // возвращаем ответ в формате json
   }
+/*  public delete(url: string = '', data): Observable<any> {
+    return this.http.delete(this.getUrl(url), data)
+        .map( ( response: Response) => response.json() );
+  }*/
 
   public post(url: string = '', data: any = {}): Observable<any> {
     return this.http.post(this.getUrl(url), data)

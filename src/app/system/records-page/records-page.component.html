@@ -5,18 +5,32 @@
     </h3>
 </div>
 
-<section class="section">
+<section class="section text-center" *ngIf="!isLoaded">
+    Loading....
+</section>
+<section class="section" *ngIf="isLoaded">
     <div class="row">
         <div class="col-md-6">
-            <usr-add-event></usr-add-event>
+            <usr-add-event [categories]="categories"></usr-add-event>
         </div>
         <div class="col-md-6">
-            <usr-add-category></usr-add-category>
+            <usr-add-category (onCategoryAdd)="newCategoryAdded($event)"></usr-add-category>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <usr-edit-category></usr-edit-category>
+            <usr-edit-category
+                    [categories]="categories"
+                    (onCategoryEdit)="categoryWasEdited($event)"
+            ></usr-edit-category>
+        </div>
+        <div class="col-md-6"><!--Принимаем событие по подписке на удаление
+                    и обрабатываем его в categoryWasDeleted-->
+            <usr-delete-category
+                    [categories]="categories"
+                    (onCategoryDelete)="categoryWasDeleted($event)"
+
+            ></usr-delete-category>
         </div>
     </div>
 </section>
